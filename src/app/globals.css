@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.link {
+  @apply focus:bg-white/30  text-lg px-7 border-b border-white/30 flex grow rounded-md bg-gray-50/20 font-medium items-center h-[30px] 
+}
+
+form div{
+  @apply flex flex-col items-start  mx-3
+}
+
+form input{
+  @apply h-10 bg-black border border-white rounded-xl px-4 w-[300px]
+}
+
+.button{
+  @apply h-10 rounded-l w-[300px] bg-white text-black text-lg font-bold hover:bg-white/35
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -25,3 +42,9 @@ body {
     text-wrap: balance;
   }
 }
+
+/*.div{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}*/
