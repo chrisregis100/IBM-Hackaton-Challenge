@@ -9,8 +9,6 @@ const { Header, Content, Footer } = Layout;
 const App = () => {
   const links = [
     { name: "Dashboard", href: "/" },
-    { name: "Functionnalities", href: "/" },
-    { name: "Prices", href: "/" },
     { name: "About", href: "/" },
   ];
   const {
@@ -18,10 +16,7 @@ const App = () => {
   } = theme.useToken();
 
 
-function handleChange(domains) {
-  console.log(domains);
-  
-}
+
 
   return (
     <Layout className="min-h-screen ">

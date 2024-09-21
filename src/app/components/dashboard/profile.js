@@ -12,15 +12,15 @@ function ProfileProps(image) {
   ]
 
   return (
-    <div className='bg-white/30  relative rounded-sm '>
+    <div className='  relative  '>
       <button
         type='button'
-        className='inline-flex   border-0 justify-start'
+        className='inline-flex rounded-full  border-0 justify-start'
         onClick={() => setIsOpen(prev => !prev)}
         aria-expanded={isOpen}
         aria-controls="dropdown-menu"
       >
-        <Image alt='profile' className='rounded-full'  src={image} width={50} height={50} />
+        <Image alt='profile' className='rounded-full'  src="https://avatar.iran.liara.run/public/43" width={50} height={50} />
       </button>
       <div id="dropdown-menu" className={`transition-all absolute z-10 shadow border border-gray-400/25 duration-200 mt-1 -ml-10 ${isOpen ? 'flex flex-col items-center bg-white/30 text-white mt-5 h-auto rounded-lg' : 'hidden'}`}>
         {links.map(link => (

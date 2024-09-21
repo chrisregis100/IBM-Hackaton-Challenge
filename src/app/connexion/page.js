@@ -2,7 +2,7 @@
 
 import { signIn } from "next-auth/react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { redirect } from "next/navigation";
 import { useState } from "react";
 
 function Page() {
@@ -10,31 +10,40 @@ function Page() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
+  const [connexion, setConnexion] = useState(true);
 
   async function handleSubmit(ev) {
     ev.preventDefault();
     setError(null);
     setLoading(true);
-
+setConnexion(false)
     const res = await signIn("credentials", {
       email,
       password,
-      redirect: false,
+      callbackUrl:"/"
     });
-
     setLoading(false);
-
+setConnexion(true)
     if (res?.error) {
       setError("Invalid email or password.");
+      setConnexion(false)
     } else {
-      router.push("/choosefield"); // Use router.push instead of redirect
+      
+      redirect("/")
     }
   }
 
   return (
     <>
       <div className="text-center mt-[200px] bg-white/30 mx-auto max-w-2xl rounded-xl border border-white">
+        {connexion && (
+            <h1 className="text-2xl gap-3 mb-4 justify-center flex items-center text-center bg-[#1a8650] h-16 rounded-lg">
+              <p>Connexion reussi! Vous pouvez vous</p>
+              <Link href={"/"} className="flex items-center gap-4">
+                <p className="underline">Continuer </p>
+              </Link>{" "}
+            </h1>
+          )}
         <div className="flex items-center justify-between">
           <div className="flex flex-col items-center bg-black">
             <h2 className="text-2xl font-semibold">Connexion</h2>

@@ -15,7 +15,6 @@ function Page() {
   async function handleSubmit(ev) {
     ev.preventDefault();
     const user = { username, email, password };
-    console.log(user);
     setConnexion(false);
     const response = await fetch("/api/auth/register", {
       method: "POST",
@@ -24,7 +23,6 @@ function Page() {
     });
     if (response.ok) {
       const user = await response.json();
-      console.log(user);
       setConnexion(true);
       router.push('/connexion')
     } else {

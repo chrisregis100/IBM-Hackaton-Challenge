@@ -13,7 +13,6 @@ const authOptions = {
     CredentialsProvider({
       name: "Credentials",
       id: "credentials",
-
       credentials: {
         email: {
           label: "Email",
@@ -29,9 +28,7 @@ const authOptions = {
           if (mongoose.connection.readyState === 0) {
             await mongoose.connect(process.env.MONGODB_URI);
           }
-
           const user = await User.findOne({ email: credentials.email });
-
           // Check if user exists
           if (!user) {
             console.log("User not found");

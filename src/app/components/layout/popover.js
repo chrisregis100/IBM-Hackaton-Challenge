@@ -13,7 +13,9 @@ const ViewDetails = ({ domainId }) => {
 
   const showModal = (id) => {
     const domain = trainingModules.find((d) => d.id === id);
-    setDetails([domain]);
+    setDetails([ domain]);
+    console.log(details);
+    
     setOpen(true);
     localStorage.setItem("domain", JSON.stringify(domain));
     console.log(domain);
@@ -21,8 +23,6 @@ const ViewDetails = ({ domainId }) => {
 
   const handleOk = async (e) => {
     e.preventDefault();
-    console.log("cliqué");
-
     setLoading(true);
     setTimeout(async () => {
       setLoading(false);

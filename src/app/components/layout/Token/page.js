@@ -13,7 +13,6 @@ const getAccessToken = async () => {
       grant_type: "urn:ibm:params:oauth:grant-type:apikey",
     }),
   });
-
   if (!response.ok) {
     throw new Error("Failed to obtain access token");
   }

@@ -4,7 +4,11 @@
 
 
 .link {
-  @apply focus:bg-white/30  text-lg px-7 border-b border-white/30 flex grow rounded-md bg-gray-50/20 font-medium items-center h-[30px] 
+  @apply focus:bg-white/30  text-lg px-7 border-b border-white/30 flex grow rounded-md bg-gray-50/20 font-medium items-center h-[36px] 
+}
+
+.lien{
+  @apply bg-white text-black text-lg px-7 border-b border-white/30 flex grow rounded-md  font-medium items-center h-[36px]
 }
 
 form div{
